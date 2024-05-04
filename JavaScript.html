@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/EnglishIcon.png">
+    <link rel = "stylesheet" href="css/style.css" type="text/css">
+    <script src="lr4.js"></script>
+    <title>JavaScript</title>
+</head>
+
+<script>
+    function calculateDays() 
+    {
+ 
+     var birthDate = new Date("2005-03-08");
+     
+     var currentDate = new Date();
+     
+     var timeDiff = currentDate.getTime() - birthDate.getTime();
+     
+     var daysPassed = Math.round(timeDiff / (1000 * 3600 * 24));
+     
+     var inputField = document.getElementById("FirstTask");
+     
+     inputField.value = "Кількість днів, що минули: " + daysPassed;
+ }
+ 
+ function Clear()
+ {
+     var inputField = document.getElementById("FirstTask");
+     inputField.value = "";
+ }
+ 
+ function showMonthInfo() 
+ {
+     var currentDate = new Date();
+     var currentMonth = currentDate.toLocaleString('uk-UA', { month: 'long' });
+    alert("Поточний місяць: " + currentMonth);
+ }
+
+ var interval;
+
+ function startClock() {
+    displayTime(); 
+    interval = setInterval(displayTime, 1000); 
+}
+
+function stopClock() {
+    clearInterval(interval); 
+    displayDate(); 
+}
+
+function displayTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    hours = (hours < 10 ? "0" : "") + hours;
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+    document.getElementById("DataBlock").textContent = hours + ":" + minutes + ":" + seconds;
+}
+
+function displayDate() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = (now.getMonth() + 1);
+    var day = now.getDate();
+    month = (month < 10 ? "0" : "") + month;
+    day = (day < 10 ? "0" : "") + day;
+    document.getElementById("DataBlock").textContent = day + "." + month + "." + year;
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    var mainLogo = document.getElementById("mainLogo");
+    var logo = document.getElementById("logo");
+
+    mainLogo.addEventListener("mouseover", function() {
+        logo.style.opacity = "1"; 
+        logo.style.top = "0"; 
+    });
+
+    mainLogo.addEventListener("mouseout", function() {
+        logo.style.opacity = "0"; 
+        logo.style.top = "-30px";
+    });
+});
+
+
+
+
+window.onload = function() {
+  displayDate();
+};
+
+ </script>
+
+<body>
+    <nav class="navbar">
+        
+        <img src="Images/Logo.png" alt="логотип" class="LogoPNG" id="mainLogo">
+        <img src="Images/LogoText.png" alt="логотип" class="LogoText" id="logo">
+        
+        <div class = "subNav">
+        <a href="AboutUs.html">Про нас</a>
+        <a href="#">Граматика</a>
+        <a href="#">Курси</a>
+        <a href="JavaScript.html">Скріпт</a>
+    </div>
+
+    <div class = DataTimeBlock><a id = "DataBlock" onmouseover="startClock()" onmouseout="stopClock()" ></a></div>
+
+    <div class = "loginButton"><a href ="Registration.html">Вхід</a></div>
+    </nav>
+
+    <div class="registration-form">
+    <form id="myForm">
+        <div class="form-group">
+        <input type="text" id="FirstTask" name="FirstTask"><br><br>
+        <button type="button" onclick="calculateDays()">OK</button>
+        <button type="button" onclick="Clear()">Скасувати</button>
+        <a href="#" onclick="showMonthInfo()">Поточний місяць</a>
+    </div>
+      </form>
+    </div>
+
+</body>
+</html>

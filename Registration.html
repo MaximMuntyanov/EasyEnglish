@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Images/EnglishIcon.png">
+    <link rel = "stylesheet" href="css/style.css" type="text/css">
+    <title>Вхід в кабінет</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html">EasyEnglish</a>
+        </div>
+        <div class = "loginButton"><a href ="Registration.html">Вхід</a></div>
+    </nav>
+
+    <div class="registration-form">
+        <h2>Реєстрація особистого акаунту</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="name"><span class="required">*</span>Ім'я:</label>
+                <input type="text" id="name" name="name" title="Будь ласка, заповніть це поле." required>
+            </div>
+            <div class="form-group">
+                <label for="surname"><span class="required">*</span>Прізвище:</label>
+                <input type="text" id="surname" name="surname" title="Будь ласка, заповніть це поле." required>
+            </div>
+            <div class="form-group">
+                <label for="email"><span class="required">*</span>Email:</label>
+                <input type="email" id="email" name="email" title="Приклад вводу: exampe@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="phone"><span class="required">*</span>Телефон:</label>
+                <input type="tel" id="phone" name="phone" pattern="\+38\(\d{3}\)\d{3}-\d{2}-\d{2}" title="Приклад вводу: +38(067)631-22-13" required>
+            </div>
+            <div class="form-group">
+                <label for="password"><span class="required">*</span>Пароль:</label>
+                <input type="password" id="password" name="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$" title="Приклад вводу: Password123!" required >
+            </div>
+            <button>Увійти</button>
+        </form>
+    </div>
+
+    <footer>
+        <p class="contact-info">Підписуйтесь на наші соц мережі</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/yourpage" target="_blank"><img src="Images/facebook-circle.svg" alt="Facebook"></a>
+            <a href="https://twitter.com/yourpage" target="_blank"><img src="Images/telegram.svg" alt="Telegram"></a>
+            <a href="https://www.instagram.com/yourpage" target="_blank"><img src="Images/instagram-circle.svg" alt="Instagram"></a>
+            
+        </div>
+        <div class="contact-info">
+            <p>Контактна інформація:</p>
+            <p>Email: EasyEnglish@gmail.com</p>
+            <p>Телефон: +38(067)631-22-13</p>
+            <p>Будні з 8.00 до 20.00</p>
+            <p>Вихідні з 10.00 до 18.00</p>
+        </div>
+    </footer>
+</body>
+</html>
